@@ -1,0 +1,33 @@
+server:
+  port: 8090
+  servlet:
+    context-path:
+
+spring:
+  datasource:
+    datasource1:
+      url: jdbc:postgresql://192.168.80.24:5432/basic?useSSL=false
+      username: postgres
+      password: gtis
+    datasource2:
+      url: jdbc:postgresql://192.168.80.24:5432/twin?useSSL=false
+      username: postgres
+      password: gtis
+  jpa:
+    jpa1:
+      repositoryPackage: cn.gtmap.ias.demo.jpa1.dao
+      entityPackage: cn.gtmap.ias.demo.jpa1.po
+      persistenceUnit: persistenceUnit1
+    jpa2:
+      repositoryPackage: cn.gtmap.ias.demo.jpa2.dao
+      entityPackage: cn.gtmap.ias.demo.jpa2.po
+      persistenceUnit: persistenceUnit2
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+logging:
+  level:
+    org.springframework: WARN
+    cn.gtmap.ias.demo: DEBUG
+    org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: ERROR
